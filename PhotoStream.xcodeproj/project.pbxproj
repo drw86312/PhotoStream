@@ -15,6 +15,8 @@
 		0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */; };
 		0EC8F1121B1BB182000A5ED3 /* PSStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */; };
 		0EC8F1141B1BB3BB000A5ED3 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */; };
+		0EC8F1171B1BC9D0000A5ED3 /* PSStreamDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1161B1BC9D0000A5ED3 /* PSStreamDataSource.m */; };
+		0EC8F11A1B1BCAF3000A5ED3 /* PSStreamViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1191B1BCAF3000A5ED3 /* PSStreamViewModel.m */; };
 		6059144CD042FAE4551176BF /* libPods-PhotoStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,10 @@
 		0EC8F1101B1BB182000A5ED3 /* PSStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStreamViewController.h; sourceTree = "<group>"; };
 		0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStreamViewController.m; sourceTree = "<group>"; };
 		0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
+		0EC8F1151B1BC9D0000A5ED3 /* PSStreamDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStreamDataSource.h; sourceTree = "<group>"; };
+		0EC8F1161B1BC9D0000A5ED3 /* PSStreamDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStreamDataSource.m; sourceTree = "<group>"; };
+		0EC8F1181B1BCAF3000A5ED3 /* PSStreamViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStreamViewModel.h; sourceTree = "<group>"; };
+		0EC8F1191B1BCAF3000A5ED3 /* PSStreamViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStreamViewModel.m; sourceTree = "<group>"; };
 		2E8DAAB178162F78ED1A2CCE /* Pods-PhotoStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoStream/Pods-PhotoStream.release.xcconfig"; sourceTree = "<group>"; };
 		E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +104,10 @@
 				0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */,
 				0EC8F1101B1BB182000A5ED3 /* PSStreamViewController.h */,
 				0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */,
+				0EC8F1151B1BC9D0000A5ED3 /* PSStreamDataSource.h */,
+				0EC8F1161B1BC9D0000A5ED3 /* PSStreamDataSource.m */,
+				0EC8F1181B1BCAF3000A5ED3 /* PSStreamViewModel.h */,
+				0EC8F1191B1BCAF3000A5ED3 /* PSStreamViewModel.m */,
 				0EC8F0F41B1BAFB9000A5ED3 /* Images.xcassets */,
 				0EC8F0EB1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld */,
 				0EC8F0E41B1BAFB9000A5ED3 /* Supporting Files */,
@@ -283,10 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC8F0EA1B1BAFB9000A5ED3 /* AppDelegate.m in Sources */,
+				0EC8F11A1B1BCAF3000A5ED3 /* PSStreamViewModel.m in Sources */,
 				0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */,
 				0EC8F0ED1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld in Sources */,
 				0EC8F0E71B1BAFB9000A5ED3 /* main.m in Sources */,
 				0EC8F1121B1BB182000A5ED3 /* PSStreamViewController.m in Sources */,
+				0EC8F1171B1BC9D0000A5ED3 /* PSStreamDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

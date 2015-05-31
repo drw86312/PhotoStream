@@ -5,6 +5,7 @@ target 'PhotoStream' do
 
 pod 'AsyncDisplayKit'
 pod 'ReactiveCocoa'
+pod 'AFNetworking'
 
 end
 

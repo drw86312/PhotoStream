@@ -7,8 +7,12 @@
 //
 
 #import "PSStreamViewController.h"
+#import "PSStreamDataSource.h"
 
-@interface PSStreamViewController ()
+@interface PSStreamViewController () <ASTableViewDelegate>
+
+@property (strong, nonatomic) ASTableView *tableView;
+@property (strong, nonatomic) PSStreamDataSource *dataSource;
 
 @end
 
@@ -17,8 +21,23 @@
 - (instancetype)init {
     if (self = [super init]) {
 
+        self.viewModel = [[PSStreamViewModel alloc] init];
+
+
     }
     return self;
+}
+
+-(void)loadView {
+    [super loadView];
+
+    _tableView = [[ASTableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMaxY(self.navigationController.navigationBar.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.navigationController.navigationBar.bounds) - CGRectGetHeight(self.tabBarController.tabBar.bounds))];
+    _tableView.asyncDelegate = self;
+    self.dataSource = [PSStreamDataSource new];
+    _tableView.asyncDataSource = self.dataSource;
+
+    [self.view addSubview:_tableView];
+
 }
 
 - (void)viewDidLoad {
