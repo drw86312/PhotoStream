@@ -10,11 +10,12 @@
 		0EC8F0E71B1BAFB9000A5ED3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F0E61B1BAFB9000A5ED3 /* main.m */; };
 		0EC8F0EA1B1BAFB9000A5ED3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F0E91B1BAFB9000A5ED3 /* AppDelegate.m */; };
 		0EC8F0ED1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F0EB1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld */; };
-		0EC8F0F01B1BAFB9000A5ED3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F0EF1B1BAFB9000A5ED3 /* ViewController.m */; };
-		0EC8F0F31B1BAFB9000A5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F0F11B1BAFB9000A5ED3 /* Main.storyboard */; };
 		0EC8F0F51B1BAFB9000A5ED3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F0F41B1BAFB9000A5ED3 /* Images.xcassets */; };
-		0EC8F0F81B1BAFB9000A5ED3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F0F61B1BAFB9000A5ED3 /* LaunchScreen.xib */; };
 		0EC8F1041B1BAFB9000A5ED3 /* PhotoStreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1031B1BAFB9000A5ED3 /* PhotoStreamTests.m */; };
+		0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */; };
+		0EC8F1121B1BB182000A5ED3 /* PSStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */; };
+		0EC8F1141B1BB3BB000A5ED3 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */; };
+		6059144CD042FAE4551176BF /* libPods-PhotoStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +29,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0537EAEA1CA6A9D9720FD91A /* Pods-PhotoStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoStream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoStream/Pods-PhotoStream.debug.xcconfig"; sourceTree = "<group>"; };
 		0EC8F0E11B1BAFB9000A5ED3 /* PhotoStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC8F0E51B1BAFB9000A5ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC8F0E61B1BAFB9000A5ED3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0EC8F0E81B1BAFB9000A5ED3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0EC8F0E91B1BAFB9000A5ED3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0EC8F0EC1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoStream.xcdatamodel; sourceTree = "<group>"; };
-		0EC8F0EE1B1BAFB9000A5ED3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0EC8F0EF1B1BAFB9000A5ED3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0EC8F0F21B1BAFB9000A5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EC8F0F41B1BAFB9000A5ED3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0EC8F0F71B1BAFB9000A5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EC8F0FD1B1BAFB9000A5ED3 /* PhotoStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC8F1021B1BAFB9000A5ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC8F1031B1BAFB9000A5ED3 /* PhotoStreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamTests.m; sourceTree = "<group>"; };
+		0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTabbarControllerViewController.h; sourceTree = "<group>"; };
+		0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTabbarControllerViewController.m; sourceTree = "<group>"; };
+		0EC8F1101B1BB182000A5ED3 /* PSStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStreamViewController.h; sourceTree = "<group>"; };
+		0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStreamViewController.m; sourceTree = "<group>"; };
+		0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
+		2E8DAAB178162F78ED1A2CCE /* Pods-PhotoStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoStream/Pods-PhotoStream.release.xcconfig"; sourceTree = "<group>"; };
+		E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6059144CD042FAE4551176BF /* libPods-PhotoStream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,8 @@
 				0EC8F0E31B1BAFB9000A5ED3 /* PhotoStream */,
 				0EC8F1001B1BAFB9000A5ED3 /* PhotoStreamTests */,
 				0EC8F0E21B1BAFB9000A5ED3 /* Products */,
+				68FC157BD2F49F5CC4864143 /* Pods */,
+				251319441F8CE5DF80C92F0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,11 +93,12 @@
 			children = (
 				0EC8F0E81B1BAFB9000A5ED3 /* AppDelegate.h */,
 				0EC8F0E91B1BAFB9000A5ED3 /* AppDelegate.m */,
-				0EC8F0EE1B1BAFB9000A5ED3 /* ViewController.h */,
-				0EC8F0EF1B1BAFB9000A5ED3 /* ViewController.m */,
-				0EC8F0F11B1BAFB9000A5ED3 /* Main.storyboard */,
+				0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.h */,
+				0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */,
+				0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */,
+				0EC8F1101B1BB182000A5ED3 /* PSStreamViewController.h */,
+				0EC8F1111B1BB182000A5ED3 /* PSStreamViewController.m */,
 				0EC8F0F41B1BAFB9000A5ED3 /* Images.xcassets */,
-				0EC8F0F61B1BAFB9000A5ED3 /* LaunchScreen.xib */,
 				0EC8F0EB1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld */,
 				0EC8F0E41B1BAFB9000A5ED3 /* Supporting Files */,
 			);
@@ -122,6 +131,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		251319441F8CE5DF80C92F0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68FC157BD2F49F5CC4864143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0537EAEA1CA6A9D9720FD91A /* Pods-PhotoStream.debug.xcconfig */,
+				2E8DAAB178162F78ED1A2CCE /* Pods-PhotoStream.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EC8F1071B1BAFB9000A5ED3 /* Build configuration list for PBXNativeTarget "PhotoStream" */;
 			buildPhases = (
+				1F48076D0AF42B08679A8143 /* Check Pods Manifest.lock */,
 				0EC8F0DD1B1BAFB9000A5ED3 /* Sources */,
 				0EC8F0DE1B1BAFB9000A5ED3 /* Frameworks */,
 				0EC8F0DF1B1BAFB9000A5ED3 /* Resources */,
+				71260CB664C193EB7D6482BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,9 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EC8F0F31B1BAFB9000A5ED3 /* Main.storyboard in Resources */,
-				0EC8F0F81B1BAFB9000A5ED3 /* LaunchScreen.xib in Resources */,
 				0EC8F0F51B1BAFB9000A5ED3 /* Images.xcassets in Resources */,
+				0EC8F1141B1BB3BB000A5ED3 /* Launch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,15 +244,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F48076D0AF42B08679A8143 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71260CB664C193EB7D6482BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoStream/Pods-PhotoStream-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0EC8F0DD1B1BAFB9000A5ED3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0EC8F0EA1B1BAFB9000A5ED3 /* AppDelegate.m in Sources */,
+				0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */,
 				0EC8F0ED1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld in Sources */,
-				0EC8F0F01B1BAFB9000A5ED3 /* ViewController.m in Sources */,
 				0EC8F0E71B1BAFB9000A5ED3 /* main.m in Sources */,
+				0EC8F1121B1BB182000A5ED3 /* PSStreamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,25 +307,6 @@
 			targetProxy = 0EC8F0FE1B1BAFB9000A5ED3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0EC8F0F11B1BAFB9000A5ED3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0EC8F0F21B1BAFB9000A5ED3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0EC8F0F61B1BAFB9000A5ED3 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0EC8F0F71B1BAFB9000A5ED3 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0EC8F1051B1BAFB9000A5ED3 /* Debug */ = {
@@ -349,6 +391,7 @@
 		};
 		0EC8F1081B1BAFB9000A5ED3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0537EAEA1CA6A9D9720FD91A /* Pods-PhotoStream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoStream/Info.plist;
@@ -359,6 +402,7 @@
 		};
 		0EC8F1091B1BAFB9000A5ED3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8DAAB178162F78ED1A2CCE /* Pods-PhotoStream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoStream/Info.plist;
@@ -420,6 +464,7 @@
 				0EC8F1091B1BAFB9000A5ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EC8F10A1B1BAFB9000A5ED3 /* Build configuration list for PBXNativeTarget "PhotoStreamTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +473,7 @@
 				0EC8F10C1B1BAFB9000A5ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

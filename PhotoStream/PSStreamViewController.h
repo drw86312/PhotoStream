@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PSStreamViewController.h
 //  PhotoStream
 //
 //  Created by David Warner on 5/31/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PSStreamViewController : UIViewController
 
 @end
-
