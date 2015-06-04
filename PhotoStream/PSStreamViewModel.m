@@ -17,8 +17,6 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
 - (instancetype)init {
     if (self = [super init]) {
 
-        self.photos = [NSArray new];
-
         NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/3/media/recent/?client_id=%@", kClientID];
 
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -37,9 +35,6 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
                      photoObject.commentsCount = (NSNumber*)photoDict[@"comments"][@"count"];
                      photoObject.likesCount = (NSNumber*)photoDict[@"likes"][@"count"];
                      photoObject.userProfileImageURL = [NSURL URLWithString:photoDict[@"user"][@"profile_picture"]];
-
-//                     photoObject.userFullName = photoDict[@"user"][@"full_name"];
-//                     photoObject.username = photoDict[@"user"][@"username"];
 
                      photoObject.lowResolutionPhoto =
                      [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"low_resolution"][@"url"]]
