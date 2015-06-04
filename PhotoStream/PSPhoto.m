@@ -13,7 +13,6 @@
 -(instancetype)initWithURL:(NSURL*)url
                      width:(NSNumber*)width
                     height:(NSNumber*)height {
-
     if (self = [super init]) {
         self.url= url;
         self.width = width;

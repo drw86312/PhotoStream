@@ -6,17 +6,16 @@
 //  Copyright (c) 2015 dwarner. All rights reserved.
 //
 
-#import "PSStreamDataSource.h"
+#import "PSAsyncStreamDataSource.h"
 #import "PSPhotoCellNode.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "PSObject.h"
 
-@interface PSStreamDataSource ()
+@interface PSAsyncStreamDataSource ()
 @property (weak, readwrite) PSStreamViewModel *viewModel;
-
 @end
 
-@implementation PSStreamDataSource
+@implementation PSAsyncStreamDataSource
 
 - (instancetype)initWithTableView:(ASTableView *)tableView
                         viewModel:(PSStreamViewModel *)viewModel {
@@ -43,6 +42,5 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.photos.count;
 }
-
 
 @end

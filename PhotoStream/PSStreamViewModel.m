@@ -24,10 +24,9 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
           parameters:nil
              success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
 
-                 NSArray *data = responseObject[@"data"];
                  NSMutableArray *tempArray = [NSMutableArray new];
 
-                 [data enumerateObjectsUsingBlock:^(NSDictionary *photoDict, NSUInteger idx, BOOL *stop) {
+                 [(NSArray*)responseObject[@"data"] enumerateObjectsUsingBlock:^(NSDictionary *photoDict, NSUInteger idx, BOOL *stop) {
 
                      PSObject *photoObject = [PSObject new];
 
@@ -46,7 +45,7 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
                                             width:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"width"]
                                            height:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"height"]];
 
-                    photoObject.standardResolutionPhoto =
+                     photoObject.standardResolutionPhoto =
                      [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"standard_resolution"][@"url"]]
                                             width:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"width"]
                                            height:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"height"]];
@@ -55,10 +54,10 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
                  }];
 
                  self.photos = [NSArray arrayWithArray:tempArray];
-
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
+                 
+             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 NSLog(@"Error: %@", error);
+             }];
     }
     return self;
 }

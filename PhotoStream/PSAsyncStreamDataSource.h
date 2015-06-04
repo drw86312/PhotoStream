@@ -1,5 +1,5 @@
 //
-//  PSStreamDataSource.h
+//  PSAsyncStreamDataSource.h
 //  PhotoStream
 //
 //  Created by David Warner on 5/31/15.
@@ -10,7 +10,7 @@
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "PSStreamViewModel.h"
 
-@interface PSStreamDataSource : NSObject <ASTableViewDataSource>
+@interface PSAsyncStreamDataSource : NSObject <ASTableViewDataSource>
 
 - (instancetype)initWithTableView:(ASTableView *)tableView
                         viewModel:(PSStreamViewModel *)viewModel;

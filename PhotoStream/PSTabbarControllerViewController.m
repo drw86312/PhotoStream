@@ -7,7 +7,8 @@
 //
 
 #import "PSTabbarControllerViewController.h"
-#import "PSStreamViewController.h"
+#import "PSAsyncStreamViewController.h"
+#import "PSNonAsyncStreamViewController.h"
 
 @interface PSTabbarControllerViewController () <UITabBarControllerDelegate>
 
@@ -20,10 +21,13 @@
 
         self.delegate = self;
 
-        PSStreamViewController *vc = [PSStreamViewController new];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        self.viewControllers = @[nav];
+        PSAsyncStreamViewController *asyncVC = [PSAsyncStreamViewController new];
+        UINavigationController *asyncNav = [[UINavigationController alloc] initWithRootViewController:asyncVC];
 
+        PSNonAsyncStreamViewController *nonAsyncVC = [PSNonAsyncStreamViewController new];
+        UINavigationController *nonAsyncNav = [[UINavigationController alloc] initWithRootViewController:nonAsyncVC];
+
+        self.viewControllers = @[asyncNav, nonAsyncNav];
     }
     return self;
 }

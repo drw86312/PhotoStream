@@ -28,24 +28,10 @@
 
 // perform expensive sizing operations on a background thread
 - (CGSize)calculateSizeThatFits:(CGSize)constrainedSize {
-//    // size the image
-//    CGSize imageSize = [_imageNode measure:constrainedSize];
-//
-//    NSLog(@"%f, %f", imageSize.width , imageSize.height);
-//
-//    // size the text node
-//    CGSize maxTextSize = CGSizeMake(constrainedSize.width - imageSize.width,
-//                                    constrainedSize.height);
-//    CGSize textSize = [_textNode measure:maxTextSize];
-//
-//    // make sure everything fits
-//    CGFloat minHeight = MAX(imageSize.height, textSize.height);
     return CGSizeMake(_imageNode.frame.size.width, _imageNode.frame.size.height);
 }
 
-// do as little work as possible in main-thread layout
-- (void)layout
-{
+- (void)layout {
 //    // layout the image using its cached size
 //    CGSize imageSize = _imageNode.calculatedSize;
 //

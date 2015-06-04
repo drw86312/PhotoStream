@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 dwarner. All rights reserved.
 //
 
-#import "PSStreamViewController.h"
-#import "PSStreamDataSource.h"
+#import "PSAsyncStreamViewController.h"
+#import "PSAsyncStreamDataSource.h"
 
-@interface PSStreamViewController () <ASTableViewDelegate>
+@interface PSAsyncStreamViewController () <ASTableViewDelegate>
 
 @property (strong, nonatomic) ASTableView *tableView;
-@property (strong, nonatomic) PSStreamDataSource *dataSource;
+@property (strong, nonatomic) PSAsyncStreamDataSource *dataSource;
 
 @end
 
-@implementation PSStreamViewController
+@implementation PSAsyncStreamViewController
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -27,6 +27,8 @@
 
 -(void)loadView {
     [super loadView];
+
+    self.title = @"Async Display Kit Feed";
 
     _tableView =[[ASTableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMaxY(self.navigationController.navigationBar.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.navigationController.navigationBar.bounds) - CGRectGetHeight(self.tabBarController.tabBar.bounds))];
     _tableView.tableFooterView = [UIView new];
@@ -39,7 +41,7 @@
     [super viewDidLoad];
 
     self.dataSource =
-    [[PSStreamDataSource alloc] initWithTableView:self.tableView
+    [[PSAsyncStreamDataSource alloc] initWithTableView:self.tableView
                                         viewModel:self.viewModel];
     _tableView.asyncDataSource = self.dataSource;
 }

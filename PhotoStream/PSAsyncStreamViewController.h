@@ -1,5 +1,5 @@
 //
-//  PSStreamViewController.h
+//  PSAsyncStreamViewController.h
 //  PhotoStream
 //
 //  Created by David Warner on 5/31/15.
@@ -10,7 +10,7 @@
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "PSStreamViewModel.h"
 
-@interface PSStreamViewController : UIViewController
+@interface PSAsyncStreamViewController : UIViewController
 
 @property (strong, nonatomic) PSStreamViewModel *viewModel;
 
