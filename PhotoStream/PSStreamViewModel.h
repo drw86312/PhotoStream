@@ -10,4 +10,6 @@
 
 @interface PSStreamViewModel : NSObject
 
+@property (strong, nonatomic) NSArray *photos;
+
 @end

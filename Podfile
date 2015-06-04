@@ -5,7 +5,7 @@ target 'PhotoStream' do
 
 pod 'AsyncDisplayKit'
 pod 'ReactiveCocoa'
-pod 'AFNetworking'
+pod 'AFNetworking', "~> 2.0"
 
 end
 

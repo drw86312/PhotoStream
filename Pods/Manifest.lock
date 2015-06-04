@@ -32,7 +32,7 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.0)
   - AsyncDisplayKit
   - ReactiveCocoa
 
