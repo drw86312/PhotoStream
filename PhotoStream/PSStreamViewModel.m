@@ -17,6 +17,8 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
 - (instancetype)init {
     if (self = [super init]) {
 
+        self.photos = [NSArray new];
+
         NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/3/media/recent/?client_id=%@", kClientID];
 
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -39,11 +41,20 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
 //                     photoObject.userFullName = photoDict[@"user"][@"full_name"];
 //                     photoObject.username = photoDict[@"user"][@"username"];
 
-                     photoObject.lowResolutionPhoto = [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"low_resolution"][@"url"]] width:(NSNumber*)photoDict[@"images"][@"low_resolution"][@"width"] height:(NSNumber*)photoDict[@"images"][@"low_resolution"][@"height"]];
+                     photoObject.lowResolutionPhoto =
+                     [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"low_resolution"][@"url"]]
+                                            width:(NSNumber*)photoDict[@"images"][@"low_resolution"][@"width"]
+                                           height:(NSNumber*)photoDict[@"images"][@"low_resolution"][@"height"]];
 
-                     photoObject.thumbnailPhoto = [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"thumbnail"][@"url"]] width:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"width"] height:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"height"]];
+                     photoObject.thumbnailPhoto =
+                     [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"thumbnail"][@"url"]]
+                                            width:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"width"]
+                                           height:(NSNumber*)photoDict[@"images"][@"thumbnail"][@"height"]];
 
-                    photoObject.standardResolutionPhoto = [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"standard_resolution"][@"url"]] width:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"width"] height:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"height"]];
+                    photoObject.standardResolutionPhoto =
+                     [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"standard_resolution"][@"url"]]
+                                            width:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"width"]
+                                           height:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"height"]];
 
                      [tempArray addObject:photoObject];
                  }];
@@ -53,9 +64,6 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
-
-
-        
     }
     return self;
 }

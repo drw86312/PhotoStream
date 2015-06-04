@@ -7,9 +7,13 @@
 //
 
 #import "PSStreamDataSource.h"
+#import "PSPhotoCellNode.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "PSObject.h"
 
 @interface PSStreamDataSource ()
 @property (weak, readwrite) PSStreamViewModel *viewModel;
+
 @end
 
 @implementation PSStreamDataSource
@@ -20,19 +24,24 @@
 
         self.viewModel = viewModel;
 
-
+        [RACObserve(self.viewModel, photos)
+         subscribeNext:^(NSArray *photos) {
+            [tableView reloadData];
+        }];
     }
     return self;
 }
 
-- (ASCellNode *)tableView:(id)tableView nodeForRowAtIndexPath:(id)indexPath {
+- (ASCellNode *)tableView:(ASTableView*)tableView nodeForRowAtIndexPath:(NSIndexPath*)indexPath {
 
-    ASCellNode *cellNode = [ASCellNode new];
-    return cellNode;
+    PSObject *photoObject = [self.viewModel.photos objectAtIndex:indexPath.row];
+    PSPhotoCellNode *photoNode = [[PSPhotoCellNode alloc] initWithPhoto:photoObject.standardResolutionPhoto];;
+    photoNode.imageNode.URL = photoObject.standardResolutionPhoto.url;
+    return photoNode;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.viewModel.photos.count;
 }
 
 

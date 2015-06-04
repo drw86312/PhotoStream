@@ -23,9 +23,6 @@
 
         self.viewModel = [[PSStreamViewModel alloc] init];
 
-
-
-
     }
     return self;
 }
@@ -35,8 +32,6 @@
 
     _tableView = [[ASTableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMaxY(self.navigationController.navigationBar.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.navigationController.navigationBar.bounds) - CGRectGetHeight(self.tabBarController.tabBar.bounds))];
     _tableView.asyncDelegate = self;
-    self.dataSource = [PSStreamDataSource new];
-    _tableView.asyncDataSource = self.dataSource;
 
     [self.view addSubview:_tableView];
 
@@ -44,7 +39,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.dataSource =
+    [[PSStreamDataSource alloc] initWithTableView:self.tableView
+                                        viewModel:self.viewModel];
+    _tableView.asyncDataSource = self.dataSource;
+
 }
 
 @end
