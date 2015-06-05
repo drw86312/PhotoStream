@@ -9,6 +9,7 @@
 #import "PSStreamViewModel.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "PSObject.h"
+#import "PSComment.h"
 
 static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
 
@@ -33,7 +34,13 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
                      photoObject.attribution = photoDict[@"attribution"];
                      photoObject.commentsCount = (NSNumber*)photoDict[@"comments"][@"count"];
                      photoObject.likesCount = (NSNumber*)photoDict[@"likes"][@"count"];
+
+                     photoObject.userFullName = photoDict[@"user"][@"full_name"];
+                     photoObject.username = photoDict[@"user"][@"username"];
                      photoObject.userProfileImageURL = [NSURL URLWithString:photoDict[@"user"][@"profile_picture"]];
+
+                     photoObject.captionText = photoDict[@"caption"][@"text"];
+                     photoObject.timeStamp = [NSDate dateWithTimeIntervalSince1970:[(NSNumber*)photoDict[@"created_time"] doubleValue]];
 
                      photoObject.lowResolutionPhoto =
                      [[PSPhoto alloc] initWithURL:[NSURL URLWithString:photoDict[@"images"][@"low_resolution"][@"url"]]
@@ -50,9 +57,25 @@ static NSString *const kClientID = @"7b38cad66c05466e9cd872f546d39d39";
                                             width:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"width"]
                                            height:(NSNumber*)photoDict[@"images"][@"standard_resolution"][@"height"]];
 
+
+                     NSMutableArray *tempCommentsArray = [NSMutableArray new];
+
+                     [(NSArray*)photoDict[@"comments"][@"data"] enumerateObjectsUsingBlock:^(NSDictionary *commentDict, NSUInteger idx, BOOL *stop) {
+
+                         PSComment *comment = [PSComment new];
+                         comment.commenterName = commentDict[@"from"][@"full_name"];
+                         comment.commenterUsername = commentDict[@"from"][@"username"];
+                         comment.userProfileImageURL = [NSURL URLWithString:commentDict[@"from"][@"profile_picture"]];
+                         comment.timeStamp = [NSDate dateWithTimeIntervalSince1970:[(NSNumber*)commentDict[@"created_time"] doubleValue]];
+                         comment.text = commentDict[@"text"];
+
+                         [tempCommentsArray addObject:comment];
+                     }];
+
+                     photoObject.comments = [NSArray arrayWithArray:tempCommentsArray];
                      [tempArray addObject:photoObject];
                  }];
-
+                 
                  self.photos = [NSArray arrayWithArray:tempArray];
                  
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

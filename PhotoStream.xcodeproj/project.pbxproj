@@ -12,7 +12,7 @@
 		0EC8F0ED1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F0EB1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld */; };
 		0EC8F0F51B1BAFB9000A5ED3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F0F41B1BAFB9000A5ED3 /* Images.xcassets */; };
 		0EC8F1041B1BAFB9000A5ED3 /* PhotoStreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1031B1BAFB9000A5ED3 /* PhotoStreamTests.m */; };
-		0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */; };
+		0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarController.m */; };
 		0EC8F1121B1BB182000A5ED3 /* PSAsyncStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1111B1BB182000A5ED3 /* PSAsyncStreamViewController.m */; };
 		0EC8F1141B1BB3BB000A5ED3 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */; };
 		0EC8F1171B1BC9D0000A5ED3 /* PSAsyncStreamDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1161B1BC9D0000A5ED3 /* PSAsyncStreamDataSource.m */; };
@@ -23,6 +23,7 @@
 		0EC8F12A1B20F3D9000A5ED3 /* PSNonAsyncStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1291B20F3D9000A5ED3 /* PSNonAsyncStreamViewController.m */; };
 		0EC8F12D1B20F45D000A5ED3 /* PSNonAsyncStreamDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F12C1B20F45D000A5ED3 /* PSNonAsyncStreamDataSource.m */; };
 		0EC8F1311B20FB0A000A5ED3 /* PSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1301B20FB0A000A5ED3 /* PSTableViewCell.m */; };
+		0EC8F1341B214997000A5ED3 /* PSComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8F1331B214997000A5ED3 /* PSComment.m */; };
 		6059144CD042FAE4551176BF /* libPods-PhotoStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +49,8 @@
 		0EC8F0FD1B1BAFB9000A5ED3 /* PhotoStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC8F1021B1BAFB9000A5ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC8F1031B1BAFB9000A5ED3 /* PhotoStreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamTests.m; sourceTree = "<group>"; };
-		0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTabbarControllerViewController.h; sourceTree = "<group>"; };
-		0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTabbarControllerViewController.m; sourceTree = "<group>"; };
+		0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTabbarController.h; sourceTree = "<group>"; };
+		0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTabbarController.m; sourceTree = "<group>"; };
 		0EC8F1101B1BB182000A5ED3 /* PSAsyncStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAsyncStreamViewController.h; sourceTree = "<group>"; };
 		0EC8F1111B1BB182000A5ED3 /* PSAsyncStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAsyncStreamViewController.m; sourceTree = "<group>"; };
 		0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
@@ -69,6 +70,8 @@
 		0EC8F12C1B20F45D000A5ED3 /* PSNonAsyncStreamDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNonAsyncStreamDataSource.m; sourceTree = "<group>"; };
 		0EC8F12F1B20FB0A000A5ED3 /* PSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableViewCell.h; sourceTree = "<group>"; };
 		0EC8F1301B20FB0A000A5ED3 /* PSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableViewCell.m; sourceTree = "<group>"; };
+		0EC8F1321B214997000A5ED3 /* PSComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSComment.h; sourceTree = "<group>"; };
+		0EC8F1331B214997000A5ED3 /* PSComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSComment.m; sourceTree = "<group>"; };
 		2E8DAAB178162F78ED1A2CCE /* Pods-PhotoStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoStream/Pods-PhotoStream.release.xcconfig"; sourceTree = "<group>"; };
 		E1A074985A203BC592EE1E9B /* libPods-PhotoStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,8 +121,8 @@
 				0EC8F0E81B1BAFB9000A5ED3 /* AppDelegate.h */,
 				0EC8F0E91B1BAFB9000A5ED3 /* AppDelegate.m */,
 				0EC8F1131B1BB3BB000A5ED3 /* Launch.xib */,
-				0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.h */,
-				0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m */,
+				0EC8F10D1B1BB0E3000A5ED3 /* PSTabbarController.h */,
+				0EC8F10E1B1BB0E3000A5ED3 /* PSTabbarController.m */,
 				0EC8F1181B1BCAF3000A5ED3 /* PSStreamViewModel.h */,
 				0EC8F1191B1BCAF3000A5ED3 /* PSStreamViewModel.m */,
 				0EC8F1271B20F3AB000A5ED3 /* Non-Async Stream */,
@@ -165,6 +168,8 @@
 				0EC8F1201B200413000A5ED3 /* PSObject.m */,
 				0EC8F11C1B1FFD79000A5ED3 /* PSPhoto.h */,
 				0EC8F11D1B1FFD79000A5ED3 /* PSPhoto.m */,
+				0EC8F1321B214997000A5ED3 /* PSComment.h */,
+				0EC8F1331B214997000A5ED3 /* PSComment.m */,
 			);
 			name = "Model Objects";
 			sourceTree = "<group>";
@@ -362,13 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC8F1341B214997000A5ED3 /* PSComment.m in Sources */,
 				0EC8F0EA1B1BAFB9000A5ED3 /* AppDelegate.m in Sources */,
 				0EC8F11E1B1FFD79000A5ED3 /* PSPhoto.m in Sources */,
 				0EC8F12A1B20F3D9000A5ED3 /* PSNonAsyncStreamViewController.m in Sources */,
 				0EC8F1211B200413000A5ED3 /* PSObject.m in Sources */,
 				0EC8F12D1B20F45D000A5ED3 /* PSNonAsyncStreamDataSource.m in Sources */,
 				0EC8F11A1B1BCAF3000A5ED3 /* PSStreamViewModel.m in Sources */,
-				0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarControllerViewController.m in Sources */,
+				0EC8F10F1B1BB0E3000A5ED3 /* PSTabbarController.m in Sources */,
 				0EC8F1311B20FB0A000A5ED3 /* PSTableViewCell.m in Sources */,
 				0EC8F0ED1B1BAFB9000A5ED3 /* PhotoStream.xcdatamodeld in Sources */,
 				0EC8F1251B20C44C000A5ED3 /* PSPhotoCellNode.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  PSTabbarControllerViewController.h
+//  PSTabbarController.h
 //  PhotoStream
 //
 //  Created by David Warner on 5/31/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSTabbarControllerViewController : UITabBarController
+@interface PSTabbarController : UITabBarController
 
 @end

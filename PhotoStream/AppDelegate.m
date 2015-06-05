@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PSTabbarControllerViewController.h"
+#import "PSTabbarController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.layer.masksToBounds = YES;
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [PSTabbarControllerViewController new];
+    self.window.rootViewController = [PSTabbarController new];
 
     [self.window makeKeyAndVisible];
 

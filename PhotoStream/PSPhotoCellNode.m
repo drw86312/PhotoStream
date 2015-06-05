@@ -22,6 +22,9 @@
         _imageNode.frame = CGRectMake(0, 0, width, height);
 
         [self addSubnode:_imageNode];
+
+        _textNode = [[ASTextNode alloc] init];
+        
     }
     return self;
 }
