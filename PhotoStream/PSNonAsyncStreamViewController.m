@@ -30,6 +30,7 @@
 
     _tableView =[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMaxY(self.navigationController.navigationBar.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.navigationController.navigationBar.bounds) - CGRectGetHeight(self.tabBarController.tabBar.bounds))];
     _tableView.tableFooterView = [UIView new];
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _tableView.delegate = self;
 
     [self.view addSubview:_tableView];

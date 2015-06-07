@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-#import "PSPhoto.h"
+#import "PSObject.h"
 
 @interface PSPhotoCellNode : ASCellNode
 
--(id)initWithPhoto:(PSPhoto*)photo;
+-(id)initWithPhoto:(PSObject*)photoObject;
 
 @property (strong, nonatomic) ASNetworkImageNode *imageNode;
 @property (strong, nonatomic) ASTextNode *textNode;

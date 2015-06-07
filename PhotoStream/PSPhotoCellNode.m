@@ -7,10 +7,11 @@
 //
 
 #import "PSPhotoCellNode.h"
+#import "PSComment.h"
 
 @implementation PSPhotoCellNode
 
--(id)initWithPhoto:(PSPhoto*)photo {
+-(id)initWithPhoto:(PSObject*)photoObject {
     self = [super init];
     if (self) {
 
@@ -18,20 +19,46 @@
         _imageNode.backgroundColor = [UIColor lightGrayColor];
 
         float width = CGRectGetWidth([UIScreen mainScreen].bounds);
-        float height = photo.height.floatValue/photo.width.floatValue * width;
+        float height = photoObject.standardResolutionPhoto.height.floatValue/photoObject.standardResolutionPhoto.width.floatValue * width;
         _imageNode.frame = CGRectMake(0, 0, width, height);
 
         [self addSubnode:_imageNode];
 
         _textNode = [[ASTextNode alloc] init];
-        
+
+        NSMutableAttributedString *textString = [[NSMutableAttributedString alloc] init];
+
+        [photoObject.comments enumerateObjectsUsingBlock:^(PSComment *comment, NSUInteger idx, BOOL *stop) {
+
+            NSMutableAttributedString *authorString =
+            [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", comment.commenterUsername]
+                                                   attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light"       size:12.0]}];
+
+            NSAttributedString *commentString =
+            [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n", comment.text]
+                                            attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:12.0]}];
+
+            [authorString appendAttributedString:commentString];
+
+            [textString appendAttributedString:authorString];
+        }];
+
+
+        self.textNode.attributedString = textString;
+        self.textNode.maximumLineCount = 8;
+        CGSize textSize = [_textNode measure:CGSizeMake(width, 120)];
+
+        self.textNode.frame = CGRectMake(10, CGRectGetMaxY(_imageNode.frame), width -20, textSize.height);
+
+        [self addSubnode:_textNode];
+
     }
     return self;
 }
 
-// perform expensive sizing operations on a background thread
 - (CGSize)calculateSizeThatFits:(CGSize)constrainedSize {
-    return CGSizeMake(_imageNode.frame.size.width, _imageNode.frame.size.height);
+    float bottomPadding = 10;
+    return CGSizeMake(_imageNode.frame.size.width, _imageNode.frame.size.height + _textNode.frame.size.height + bottomPadding);
 }
 
 - (void)layout {
