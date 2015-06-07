@@ -14,7 +14,4 @@
 
 -(id)initWithPhoto:(PSObject*)photoObject;
 
-@property (strong, nonatomic) ASNetworkImageNode *imageNode;
-@property (strong, nonatomic) ASTextNode *textNode;
-
 @end

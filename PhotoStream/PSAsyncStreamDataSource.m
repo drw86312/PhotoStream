@@ -35,7 +35,6 @@
 
     PSObject *photoObject = [self.viewModel.photos objectAtIndex:indexPath.row];
     PSPhotoCellNode *photoNode = [[PSPhotoCellNode alloc] initWithPhoto:photoObject];;
-    photoNode.imageNode.URL = photoObject.standardResolutionPhoto.url;
     return photoNode;
 }
 
