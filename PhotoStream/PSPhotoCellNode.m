@@ -28,30 +28,24 @@
 
         NSMutableAttributedString *textString = [[NSMutableAttributedString alloc] init];
 
-        [photoObject.comments enumerateObjectsUsingBlock:^(PSComment *comment, NSUInteger idx, BOOL *stop) {
+        [photoObject.comments enumerateObjectsUsingBlock:^(PSComment *c, NSUInteger idx, BOOL *stop) {
 
-            NSMutableAttributedString *authorString =
-            [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", comment.commenterUsername]
+            NSMutableAttributedString *author =
+            [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", c.commenterUsername]
                                                    attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light"       size:12.0]}];
-
-            NSAttributedString *commentString =
-            [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n", comment.text]
+            NSAttributedString *comment =
+            [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n", c.text]
                                             attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:12.0]}];
 
-            [authorString appendAttributedString:commentString];
-
-            [textString appendAttributedString:authorString];
+            [author appendAttributedString:comment];
+            [textString appendAttributedString:author];
         }];
-
 
         self.textNode.attributedString = textString;
         self.textNode.maximumLineCount = 8;
         CGSize textSize = [_textNode measure:CGSizeMake(width, 120)];
-
         self.textNode.frame = CGRectMake(10, CGRectGetMaxY(_imageNode.frame), width -20, textSize.height);
-
         [self addSubnode:_textNode];
-
     }
     return self;
 }

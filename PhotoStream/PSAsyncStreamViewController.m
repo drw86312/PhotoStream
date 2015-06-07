@@ -30,7 +30,7 @@
 
     self.title = @"Async Display Kit Feed";
 
-    _tableView =[[ASTableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMaxY(self.navigationController.navigationBar.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.navigationController.navigationBar.bounds) - CGRectGetHeight(self.tabBarController.tabBar.bounds))];
+    _tableView =[[ASTableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     _tableView.tableFooterView = [UIView new];
     _tableView.asyncDelegate = self;
 
