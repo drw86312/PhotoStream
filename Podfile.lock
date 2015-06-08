@@ -23,6 +23,7 @@ PODS:
   - AsyncDisplayKit (1.2):
     - AsyncDisplayKit/ASDealloc2MainObject (= 1.2)
   - AsyncDisplayKit/ASDealloc2MainObject (1.2)
+  - NSDate+TimeAgo (1.0.3)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -34,11 +35,13 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AsyncDisplayKit
+  - NSDate+TimeAgo (~> 1.0.3)
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AsyncDisplayKit: 32d5b9112b8c1b6644b54429e0cda4fbf6563781
+  NSDate+TimeAgo: 416f55d2696d3744c313091c5a9280d47f8238fe
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.36.4

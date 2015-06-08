@@ -6,6 +6,7 @@ target 'PhotoStream' do
 pod 'AsyncDisplayKit'
 pod 'ReactiveCocoa'
 pod 'AFNetworking', "~> 2.0"
+pod 'NSDate+TimeAgo', '~>1.0.3'
 
 end
 

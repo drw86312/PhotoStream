@@ -34,7 +34,7 @@
 - (ASCellNode *)tableView:(ASTableView*)tableView nodeForRowAtIndexPath:(NSIndexPath*)indexPath {
 
     PSObject *photoObject = [self.viewModel.photos objectAtIndex:indexPath.row];
-    PSPhotoCellNode *photoNode = [[PSPhotoCellNode alloc] initWithPhoto:photoObject];;
+    PSPhotoCellNode *photoNode = [[PSPhotoCellNode alloc] initWithPhotoObject:photoObject];;
     return photoNode;
 }
 

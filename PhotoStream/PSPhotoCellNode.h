@@ -12,6 +12,6 @@
 
 @interface PSPhotoCellNode : ASCellNode
 
--(id)initWithPhoto:(PSObject*)photoObject;
+-(id)initWithPhotoObject:(PSObject*)photoObject;
 
 @end

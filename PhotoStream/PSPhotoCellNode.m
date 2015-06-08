@@ -8,6 +8,7 @@
 
 #import "PSPhotoCellNode.h"
 #import "PSComment.h"
+#import "NSDate+TimeAgo.h"
 
 CGFloat const kCellHeaderHeight = 50;
 
@@ -16,24 +17,37 @@ CGFloat const kCellHeaderHeight = 50;
 @property (strong, nonatomic) ASNetworkImageNode *imageNode;
 @property (strong, nonatomic) ASTextNode *commentsNode;
 @property (strong, nonatomic) ASTextNode *nameNode;
+@property (strong, nonatomic) ASTextNode *timeNode;
 @end
 
 @implementation PSPhotoCellNode
 
--(id)initWithPhoto:(PSObject*)photoObject {
+-(id)initWithPhotoObject:(PSObject*)photoObject {
     self = [super init];
     if (self) {
 
         float width = CGRectGetWidth([UIScreen mainScreen].bounds);
-        float height = photoObject.standardResolutionPhoto.height.floatValue/photoObject.standardResolutionPhoto.width.floatValue * width;
+        float imageHeight = photoObject.standardResolutionPhoto.height.floatValue/photoObject.standardResolutionPhoto.width.floatValue * width;
+        float sidePadding = 15.f;
+        float topPadding = 10.f;
 
         _userProfileImageNode = [[ASNetworkImageNode alloc] init];
         _userProfileImageNode.backgroundColor = [UIColor lightGrayColor];
         _userProfileImageNode.URL = photoObject.userProfileImageURL;
-        _userProfileImageNode.frame = CGRectMake(15, 10, 30, 30);
-        _userProfileImageNode.layer.cornerRadius = 15;
+        _userProfileImageNode.frame = CGRectMake(sidePadding, topPadding, kCellHeaderHeight - (2*topPadding), kCellHeaderHeight - (2*topPadding));
+        _userProfileImageNode.layer.cornerRadius = CGRectGetWidth(_userProfileImageNode.frame)/2;
         _userProfileImageNode.clipsToBounds = YES;
         [self addSubnode:_userProfileImageNode];
+
+        _timeNode = [[ASTextNode alloc] init];
+        _timeNode.maximumLineCount = 1;
+        _timeNode.attributedString =
+        [[NSAttributedString alloc] initWithString:[photoObject.timeStamp timeAgoSimple]
+                                        attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-UltraLight"
+                                                                                           size:12.0]}];
+        CGSize sizeThatFits =[_timeNode measure:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+        _timeNode.frame = CGRectMake(width - sidePadding - sizeThatFits.width, kCellHeaderHeight/2 - sizeThatFits.height/2, sizeThatFits.width, sizeThatFits.height);
+        [self addSubnode:_timeNode];
 
         _nameNode = [[ASTextNode alloc] init];
         _nameNode.maximumLineCount = 1;
@@ -41,19 +55,22 @@ CGFloat const kCellHeaderHeight = 50;
         [[NSAttributedString alloc] initWithString:photoObject.userFullName
                                         attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue"
                                                                                            size:16.0]}];
-        CGSize sizeThatFits =[_nameNode measure:CGSizeMake(width - (CGRectGetMaxY(_userProfileImageNode.frame) + 25), CGFLOAT_MAX)];
+
+        float rightSpace = width - (CGRectGetMinX(_timeNode.frame) - sidePadding);
+        float leftSpace = CGRectGetMaxX(_userProfileImageNode.frame) + sidePadding;
+        sizeThatFits =[_nameNode measure:CGSizeMake(width - rightSpace - leftSpace, CGFLOAT_MAX)];
+
         _nameNode.frame = CGRectMake(CGRectGetMaxY(_userProfileImageNode.frame) + 15, kCellHeaderHeight/2 - sizeThatFits.height/2, sizeThatFits.width, sizeThatFits.height);
         [self addSubnode:_nameNode];
 
         _imageNode = [[ASNetworkImageNode alloc] init];
         _imageNode.backgroundColor = [UIColor lightGrayColor];
         _imageNode.URL = photoObject.standardResolutionPhoto.url;
-        _imageNode.frame = CGRectMake(0, kCellHeaderHeight, width, height);
+        _imageNode.frame = CGRectMake(0, kCellHeaderHeight, width, imageHeight);
         [self addSubnode:_imageNode];
 
         _commentsNode = [[ASTextNode alloc] init];
         NSMutableAttributedString *textString = [[NSMutableAttributedString alloc] init];
-
         [photoObject.comments enumerateObjectsUsingBlock:^(PSComment *c, NSUInteger idx, BOOL *stop) {
 
             NSMutableAttributedString *author =
@@ -69,8 +86,8 @@ CGFloat const kCellHeaderHeight = 50;
 
         _commentsNode.attributedString = textString;
         _commentsNode.maximumLineCount = 8;
-        CGSize textSize = [_commentsNode measure:CGSizeMake(width, 120)];
-        _commentsNode.frame = CGRectMake(10, CGRectGetMaxY(_imageNode.frame) + 10, width -20, textSize.height);
+        sizeThatFits = [_commentsNode measure:CGSizeMake(width, 120)];
+        _commentsNode.frame = CGRectMake(sidePadding, CGRectGetMaxY(_imageNode.frame) + topPadding, width - (2*sidePadding), sizeThatFits.height);
         [self addSubnode:_commentsNode];
     }
     return self;

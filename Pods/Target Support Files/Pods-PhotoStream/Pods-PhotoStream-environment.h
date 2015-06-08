@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_AsyncDisplayKit_ASDealloc2MainObject 2
 #define COCOAPODS_VERSION_PATCH_AsyncDisplayKit_ASDealloc2MainObject 0
 
+// NSDate+TimeAgo
+#define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
+#define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1
+#define COCOAPODS_VERSION_MINOR_NSDate_TimeAgo 0
+#define COCOAPODS_VERSION_PATCH_NSDate_TimeAgo 3
+
 // ReactiveCocoa
 #define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
 #define COCOAPODS_VERSION_MAJOR_ReactiveCocoa 2
